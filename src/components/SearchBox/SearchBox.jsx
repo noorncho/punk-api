@@ -10,7 +10,7 @@ const SearchBox = () => {
 
     return (
         <form className="search-box">
-            <input type="text" className="search-box__input" />
+            <input type="text" className="search-box__input" placeholder="Search Beer..." />
         </form>
     )
 }
