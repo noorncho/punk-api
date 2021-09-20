@@ -7,22 +7,47 @@ import Main from './components/Main/Main';
 import beerData from './data/beers';
 
 function App() {
-  const [beers, setBeers] = useState([]);
-  
+  const [beers, setBeers] = useState([]);  
   
   /*
   const [searchTerm, setSearchTerm] = useState("");
-  const handleInput =(e) =>{
-    const cleanInput = e.target.value.toLowerCase();
-    setSearchTerm(cleanInput);
+  const handleInput = (e) =>{
+    e.preventDefault()
+    const input = e.target.value.toLowerCase();
+    setSearchTerm(input);
   }
   */
+  
 
   const getBeers = (searchTerm) =>{
     const searchedBeer = beerData.filter(beer => {
       return beer.name.toLowerCase().includes(searchTerm);
     });
     setBeers(searchedBeer);
+  }
+
+  const filterAlcohol = (e) =>{
+    if(e.target.checked){
+      const filteredBeer = beerData.filter(beer => beer.abv > 6);
+      setBeers(filteredBeer)
+    }
+  }
+
+  const filterClassic = (e) =>{
+    if(e.target.checked){
+      const filteredBeer = beerData.filter(beer => {
+        const beerYear = beer.first_brewed.split("/")[1];
+        return Number(beerYear) < 2010;      
+      });
+      setBeers(filteredBeer);
+    }
+  }
+
+  const filterAcidity = (e) =>{
+    if(e.target.checked){
+      const filteredBeer = beerData.filter(beer => beer.ph < 4);
+      setBeers(filteredBeer);
+    }
   }
 
   useEffect(() => {
@@ -32,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <div className="sidenav">
-        <Navbar handleInput={getBeers} />
+        <Navbar handleInput={getBeers} filterAcidity={filterAcidity} filterAlcohol={filterAlcohol} filterClassic={filterClassic} />
       </div>
       <Main beerData={beers}/>
     </div>
