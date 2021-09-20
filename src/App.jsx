@@ -18,7 +18,7 @@ function App() {
   }
   */
 
-  const handleInput = (searchTerm) =>{
+  const getBeers = (searchTerm) =>{
     const searchedBeer = beerData.filter(beer => {
       return beer.name.toLowerCase().includes(searchTerm);
     });
@@ -26,13 +26,13 @@ function App() {
   }
 
   useEffect(() => {
-    handleInput(beers);
+    getBeers(beers);
   }, [])
 
   return (
     <div className="App">
       <div className="sidenav">
-        <Navbar handleInput={handleInput} />
+        <Navbar handleInput={getBeers} />
       </div>
       <Main beerData={beers}/>
     </div>
