@@ -1,17 +1,23 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./SearchBox.scss";
 
-const SearchBox = () => {
-    const [searchTerm, setSearchTerm] = useState("");
+const SearchBox = (props) => {
+    const {handleInput} = props;
+    /*const [searchTerm, setSearchTerm] = useState("");
     const handleInput =(e) =>{
         const cleanInput = e.target.value.toLowerCase();
         setSearchTerm(cleanInput);
-    }
+    }*/
 
-    return (
+    /*return (
         <form className="search-box">
-            <input type="text" className="search-box__input" placeholder="Search Beer..." />
+            <input type="text" className="search-box__input" placeholder="Search Beer..." onInput={handleInput} />
         </form>
+    )*/
+    return (
+        <div className="search-box">
+            <input type="text" placeholder="Search beers" onInput={(e) => handleInput(e.target.value.toLowerCase())} />
+        </div>
     )
 }
 

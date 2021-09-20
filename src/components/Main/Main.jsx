@@ -1,12 +1,11 @@
 import React from 'react';
 import CardList from '../CardList/CardList';
 
-import beers from '../../data/beers';
-
-const Main = () => {
+const Main = (props) => {
+    const {beerData} = props
     return (
         <div className="main">
-            <CardList beerArr={beers} />
+            <CardList beerArr={beerData} />
         </div>
     )
 }
