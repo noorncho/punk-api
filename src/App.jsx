@@ -17,7 +17,15 @@ function App() {
     setSearchTerm(input);
   }
   */
-  
+  const fetchBeers = () =>{
+    fetch("https://api.punkapi.com/v2/beers")
+      .then(response => response.json())
+      .then(jsonResponse => setBeers(jsonResponse))
+      .catch(err => console.log("error"))
+  };
+  useEffect(() => {
+    fetchBeers();
+  }, [])
 
   const getBeers = (searchTerm) =>{
     const searchedBeer = beerData.filter(beer => {
@@ -25,6 +33,7 @@ function App() {
     });
     setBeers(searchedBeer);
   }
+
 
   const filterAlcohol = (e) =>{
     if(e.target.checked){
@@ -49,10 +58,6 @@ function App() {
       setBeers(filteredBeer);
     }
   }
-
-  useEffect(() => {
-    getBeers(beers);
-  }, [])
 
   return (
     <div className="App">
