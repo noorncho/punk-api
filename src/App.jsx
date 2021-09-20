@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import './App.css';
+import './App.scss';
 
 import Navbar from './components/NavBar/Navbar';
 import Main from './components/Main/Main';
@@ -27,6 +27,9 @@ function App() {
     fetchBeers();
   }, [])
 
+  /****
+   * Search Bar functionality
+   */
   const getBeers = (searchTerm) =>{
     const searchedBeer = beerData.filter(beer => {
       return beer.name.toLowerCase().includes(searchTerm);
@@ -35,6 +38,9 @@ function App() {
   }
 
 
+  /************************************************
+   *      Functions for filters in Navbar
+   ***********************************************/
   const filterAlcohol = (e) =>{
     if(e.target.checked){
       const filteredBeer = beerData.filter(beer => beer.abv > 6);
@@ -67,10 +73,16 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="App__title">Brewdog's Search - Using Punk API</h1>
       <div className="sidenav">
         <Navbar handleInput={getBeers} filterAcidity={filterAcidity} filterAlcohol={filterAlcohol} filterClassic={filterClassic} />
       </div>
-      <Main beerData={beers}/>
+      <div className="main">
+        <Main beerData={beers}/>
+      </div>
+      <div className="photo-credit">
+        Photo by <a href="https://unsplash.com/@christinhumephoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christin Hume</a> on <a href="https://unsplash.com/s/photos/brewery?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </div>
     </div>
   );
 }

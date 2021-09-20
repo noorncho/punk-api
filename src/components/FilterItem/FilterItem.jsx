@@ -1,4 +1,5 @@
 import React from 'react';
+import "./FilterItem.scss"
 
 const FilterItem = (props) => {
     const {label, property, filterBeer} = props;

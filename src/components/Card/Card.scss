@@ -2,7 +2,12 @@
     border: black solid 2px;
 
     &__image{
-        height: 50%;
+        height: 35%;
         width: 100px;
     }
+
+    >p{
+        margin: 6px;
+    }
+
 }
