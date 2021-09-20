@@ -39,6 +39,8 @@ function App() {
     if(e.target.checked){
       const filteredBeer = beerData.filter(beer => beer.abv > 6);
       setBeers(filteredBeer)
+    }else{
+      fetchBeers();
     }
   }
 
@@ -49,6 +51,8 @@ function App() {
         return Number(beerYear) < 2010;      
       });
       setBeers(filteredBeer);
+    }else{
+      fetchBeers();
     }
   }
 
@@ -56,6 +60,8 @@ function App() {
     if(e.target.checked){
       const filteredBeer = beerData.filter(beer => beer.ph < 4);
       setBeers(filteredBeer);
+    }else{
+      fetchBeers();
     }
   }
 
