@@ -1,5 +1,9 @@
 .beer{
     border: black solid 2px;
+    height: 90%;
+    border-radius: 20px;
+    box-shadow: 5px 10px 8px #888888;
+    background-color: white;
 
     &__image{
         height: 35%;

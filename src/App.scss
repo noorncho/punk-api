@@ -8,11 +8,18 @@
 
 .sidenav{
   float: left;
-  width: 30%;
+  width: 20%;
   position: fixed;
+  top: 0;
 }
 
 .main{
   float: right;
-  width: 90%
+  width: 89%;
+  background-color: rgb(155, 154, 83);
+}
+
+.photo-credit{
+  float: right;
+  bottom: 0;
 }
