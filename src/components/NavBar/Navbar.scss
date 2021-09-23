@@ -1,4 +1,11 @@
 .navBar{
-    height: 100%;
-    position: absolute;
+    background-image: url("../../images/beer-barrels.jpg");
+    background-size: 180%;
+    height: 100vh;
+    color: white;
+    border: solid black 1px;
+}
+
+.photo-credit{
+    bottom: 0;
 }

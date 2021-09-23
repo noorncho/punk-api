@@ -8,6 +8,7 @@ const Navbar = (props) => {
     //const {searchTerm, handleInput} = props
     return (
         <div className="navBar">
+            <h3>Search for a beer</h3>
             <SearchBox handleInput={handleInput} />
             <FiletersList filterAcidity={filterAcidity} filterAlcohol={filterAlcohol} filterClassic={filterClassic} />
         </div>

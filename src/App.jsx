@@ -73,16 +73,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="App__title">Brewdog's Search - Using Punk API</h1>
       <div className="sidenav">
         <Navbar handleInput={getBeers} filterAcidity={filterAcidity} filterAlcohol={filterAlcohol} filterClassic={filterClassic} />
       </div>
       <div className="main">
+        <h1 className="App__title">Brewdog's Beer Search</h1>
         <Main beerData={beers}/>
       </div>
-      <div className="photo-credit">
-        Photo by <a href="https://unsplash.com/@christinhumephoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christin Hume</a> on <a href="https://unsplash.com/s/photos/brewery?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  </div>
+        <div className="photo-credit">
+        Photo by <a href="https://unsplash.com/@augie_ph?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">August Phlieger</a> on <a href="https://unsplash.com/s/photos/craft-beer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> 
+        </div>
     </div>
   );
 }
